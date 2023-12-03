@@ -16,7 +16,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $pswd = $_POST['pswd'];
 $adrs = $_POST['adrs'];
-$mobile = $_POST['mobile'];
+$mobile = $_POST['mobile']
 
 $query = "INSERT INTO users (user_name, email,password,address,mobile) VALUES ('$name', '$email','$pswd','$adrs','$mobile')";
 
