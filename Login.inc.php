@@ -14,7 +14,7 @@
 
     $conn = mysqli_connect($servername, $dbname, $username, $password);
     if (mysqli_connect_errno()) {
-        die()
+        die();
     }
 
 

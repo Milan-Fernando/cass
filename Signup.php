@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <title> Register </title>
     
 <style>
@@ -52,23 +53,23 @@ h1{
 <body>
 <?php include 'Header.php'; ?> <!-- Header linked in here -->
 
-<form action="Includes/signup.inc.php" method="post" style="font-size: 16px;">
-
-        <center>
-            <h1> Sign Up </h1>
-            <!-- <label for="username"> Username: </label> -->
-                <input type="text" id="username" name="uid" required placeholder="User name">
-            <!-- <label for="email"> Email: </label> -->
-                <input type="email" id="email" name="email" required placeholder="Email">
-            <!-- <label for="password"> Password: </label> -->
-                <input type="password" id="password" name="pswd" required placeholder="Password">
-            <!-- <label for="password"> Confirm Password: </label> -->
-                <input type="password" id="password" name="pswdr" required placeholder="Confirm Password">
-                <input type="text" id="address" name="adrs" required placeholder="Address">
-                <input type="text" id="mobile" name="mobile" required placeholder="Mobile">
-                <input type="submit" value="Sign Up"> <br> <br>
-        </center>
-    
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+        <form action="signup.inc.php" method="post" style="font-size: 16px;">
+<center>
+        <h1> Sign Up </h1>
+        <input type="text" id="username" name="name" required placeholder="User name">
+        <input type="email" id="email" name="email" required placeholder="Email">
+        <input type="password" id="password" name="pswd" required placeholder="Password">
+        <input type="password" id="password" name="pswdr" required placeholder="Confirm Password">
+        <input type="text" id="address" name="adrs" required placeholder="Address">
+        <input type="text" id="mobile" name="mobile" required placeholder="Mobile">
+        <input type="submit" value="Sign Up"> <br> <br>
+</center>
+</form>
+        </div>            
+    </div>
+</div>
 </body>
 </html>

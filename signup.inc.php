@@ -1,28 +1,25 @@
 <?php
-include_once 'db_connection.php';
 
-if (!defined('signup.inc.php')) {
-    header('Location: ../signup.php');
-    exit();
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "cass";
+
+// Create connection
+$mysqli = new mysqli($host, $username, $password, $database);
+
+if ($mysqli->connect_error) {
+  die('Error connecting to database: ' . $mysqli->connect_error);
 }
 
-if (isset($_POST['submit'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['uid']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['pswd']);
-    $address = mysqli_real_escape_string($conn, $_POST['adrs']);
-    $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
+$name = $_POST['name'];
+$email = $_POST['email'];
+$pswd = $_POST['pswd'];
+$adrs = $_POST['adrs'];
+$mobile = $_POST['mobile'];
 
-    // Your SQL query to insert data into the 'users' table
-    $sql = "INSERT INTO users (username, email, pwd, address, mobile) 
-        VALUES ('$username', '$email', '$password', '$address', '$mobile')";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "Record added successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-}
+$query = "INSERT INTO users (user_name, email,password,address,mobile) VALUES ('$name', '$email','$pswd','$adrs','$mobile')";
 
-$conn->close();
+mysqli_query($mysqli,$query);
+
 ?>

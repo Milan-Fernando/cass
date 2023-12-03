@@ -1,14 +1,18 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "cass";
 
-// Create connection
-$conn = new mysqli($host, $username, $password, $database);
+class DB {
+  public function dbConn()
+  {
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "cass";
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    $conn = new mysqli($host, $username, $password, $database);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+  }
 }
 ?>
